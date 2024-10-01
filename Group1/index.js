@@ -1,16 +1,19 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const {readFile, readFileAsync} = require('fs');
+const fs = require('fs');
+
+app.use(express.static(path.join(__dirname)))
 
 app.get('/', (req, res) => {
-    readFile('default.html', 'utf8', (err, data) => {
+    fs.readFile('./default.html', 'utf8', (err, html) => {
         if (err){
             res.status(500).send("Sorry, out of order");
         }
-        res.send(data)
+        res.send(html);
     })
 })
 
 app.listen(process.env.PORT || 3000, () =>{
-    console.log("Server is running");
+    console.log('Server is running');
 })

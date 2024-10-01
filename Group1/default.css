@@ -20,7 +20,6 @@ html, body {
     padding: 0;
 }
 
-/* Header style */
 header {
     background-color: #333;
     color: #fff;
@@ -61,7 +60,6 @@ header nav ul li a {
     flex: 1;
 }
 
-/* Group section style */
 .hero {
     display: flex;
     justify-content: flex-start;
