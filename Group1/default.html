@@ -24,9 +24,21 @@
         <!-- Group section -->
         <section class="hero">
             <div class="group-photo">
-                <img src="image/groupPhoto.jpg""  alt="Group Photo">
-            </div>
+                <img src="images/groupPhoto.jpg"  alt="Group Photo" width="800" usemap="#groupPhoto">
+                <map name="groupPhoto">
+                    <!--
+                        Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index)
 
+                        <area shape="poly" coords="8,369,144,262,261,261,377,312,438,450,417,481,327,673,527,781,525,946,8,947" href="members/22120271/22120271.html"/>
+                        <area shape="poly" coords="532,946,1196,944,1166,838,1033,734,1004,631,914,629,859,412,736,338,541,431" href="members/22120289/22120289.html"/>
+                        <area shape="poly" coords="937,315,1052,288,1187,387,1176,585,1266,619,1266,940,1209,940,1175,829,1037,729,1008,615,920,617,869,415" href="members/22120312/22120312.html"/>
+                    -->
+                    <area shape="poly" coords="5,230,90,163,163,163,235,195,273,281,260,300,204,420,329,488,328,591,5,591" href="members/22120271/22120271.html"/>
+                    <area shape="poly" coords="332,591,747,590,728,523,645,458,627,394,571,393,536,257,460,211,338,269" href="members/22120289/22120289.html"/>
+                    <area shape="poly" coords="585,196,657,180,741,241,735,365,791,386,791,587,755,587,734,518,648,455,630,384,575,385,543,259" href="members/22120312/22120312.html"/>
+                </map>
+            </div>
+            
             <div class="group-info">
                 <h2>Member information</h2>
                 <ul>
@@ -76,5 +88,20 @@
     <footer>
         <p>&copy; Group Web Application Development</p>
     </footer>
+    <script>
+        function scaleMappingArea(coords, fromWidth, fromHeight, toWidth, toHeight){
+            let coordsArr = coords.split(",").map(Number);
+            let scaledCoords = coordsArr.map((coord, index) => {
+                //Even coords are x component
+                if (index % 2 == 0){
+                    return coord * toWidth / fromWidth;
+                //Odd coords are y component
+                } else {
+                    return coord * toHeight / fromHeight;
+                }
+            })
+            return scaledCoords.join(",");
+        }
+    </script>
 </body>
 </html>
